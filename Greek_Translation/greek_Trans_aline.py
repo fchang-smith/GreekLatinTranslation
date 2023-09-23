@@ -1,7 +1,9 @@
 import numpy as np
 
+source_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/PH2219 - IG II2 1.txt'
+new_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/test.txt'
 
-def main():
+def main(stringin):
   #substitutions
   eqv = np.array( ['*'] * 15000)
   for i in range(0, 254):
@@ -151,18 +153,9 @@ def main():
   eqv[8311] = '7'  # SUPERSCRIPT 7
 
   # Formatting characters
-  eqv[10] = 10  # CARRIAGE RETURN
-  eqv[3] = 3  # SPACE
-
-  stringin = "Α α, Β β, Γ γ, Δ δ, Ε ε, Ζ ζ, Η η, Θ θ, Ι ι, Κ κ, Λ λ, Μ μ, Ν ν, Ξ ξ, Ο ο, Π π, Ρ ρ, Σ σ/ς, Τ τ, Υ υ, Φ φ, Χ χ, Ψ ψ, Ω ω"
-
-  # for i in range(913, 945):
-  #   print("unicode ", i, " :", chr(i))
-  #   print("eqv ", i, " :", eqv[i])
-
-
-  # print("unicode 927: ", chr(927))
-  # print("eqv 927: ", eqv[927])
+  eqv[10] = "\n"  # CARRIAGE RETURN
+  eqv[3] = ' '  # SPACE
+  eqv[32] = ' '  # SPACE
 
 
   if (isinstance(stringin, str)):
@@ -171,10 +164,21 @@ def main():
       if eqv[ord(char)] != '*':
         txt.append(eqv[ord(char)])
     txt = ''.join(txt)
-    print(txt)
+    # print(txt)
     return txt
 
+try:
+    with open(source_file_path, 'r') as source_file:
+        with open(new_file_path, 'w') as new_file:
+            for line in source_file:
+                line = main(line)
+                new_file.write(line)
+    
+    print(f"File '{source_file_path}' copied to '{new_file_path}' successfully.")
+except FileNotFoundError:
+    print(f"File '{source_file_path}' not found.")
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
 
-
-if __name__ == "__main__":
-  main()
+# if __name__ == "__main__":
+#   main()
