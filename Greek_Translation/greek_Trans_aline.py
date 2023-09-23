@@ -25,8 +25,7 @@ def main():
   eqv[926] = 'X'  # XI
   eqv[927] = 'O'  # OMICRON
   eqv[928] = 'P'  # PI
-  eqv[929] = 'P'  # PI
-  eqv[930] = 'R'  # RHO
+  eqv[929] = 'R'  # PI
   eqv[931] = 'S'  # SIGMA
   eqv[932] = 'T'  # TAU
   eqv[933] = 'U'  # UPSILON
@@ -153,9 +152,9 @@ def main():
 
   # Formatting characters
   eqv[10] = 10  # CARRIAGE RETURN
-  eqv[32] = 32  # SPACE
+  eqv[3] = 3  # SPACE
 
-  stringin = "α"
+  stringin = "Α α, Β β, Γ γ, Δ δ, Ε ε, Ζ ζ, Η η, Θ θ, Ι ι, Κ κ, Λ λ, Μ μ, Ν ν, Ξ ξ, Ο ο, Π π, Ρ ρ, Σ σ/ς, Τ τ, Υ υ, Φ φ, Χ χ, Ψ ψ, Ω ω"
 
   # for i in range(913, 945):
   #   print("unicode ", i, " :", chr(i))
