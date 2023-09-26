@@ -1,9 +1,16 @@
 import numpy as np
+import sys 
+import os 
 
-source_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/PH2219 - IG II2 1.txt'
-new_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/test.txt'
+# source_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/PH2219 - IG II2 1.txt'
+# new_file_path = '/Users/alinemarrap/Howe Annotations/GreekLatinTranslation/test.txt'
 
 def main(stringin):
+
+  check_file = os.stat(sys.argv[1]).st_size
+  if (check_file==0):
+      sys.exit() 
+
   #substitutions
   eqv = np.array( ['*'] * 15000)
   for i in range(0, 254):
@@ -168,17 +175,18 @@ def main(stringin):
     return txt
 
 try:
-    with open(source_file_path, 'r') as source_file:
-        with open(new_file_path, 'w') as new_file:
+    with open(sys.argv[1], 'r') as source_file:
+        with open(sys.argv[2], 'w') as new_file:
             for line in source_file:
                 line = main(line)
                 new_file.write(line)
     
-    print(f"File '{source_file_path}' copied to '{new_file_path}' successfully.")
+    print(f"File '{sys.argv[1]}' copied to '{sys.argv[2]}' successfully.")
 except FileNotFoundError:
-    print(f"File '{source_file_path}' not found.")
+    print(f"File '{sys.argv[1]}' not found.")
 except Exception as e:
     print(f"An error occurred: {str(e)}")
 
-# if __name__ == "__main__":
-#   main()
+
+if __name__ == "__main__":
+  main()
