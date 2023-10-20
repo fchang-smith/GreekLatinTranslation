@@ -1,5 +1,5 @@
-source_file_path = '/Users/fiona/Library/Mobile Documents/com~apple~CloudDocs/PHD/Research:Lab/Howe lab/GreekLatinTranslation/PH2219 - IG II2 1_LatinTEST.txt'
-new_file_path = '/Users/fiona/Library/Mobile Documents/com~apple~CloudDocs/PHD/Research:Lab/Howe lab/GreekLatinTranslation/PH2219 - IG II2 1_Latin.txt'
+source_file_path = '/Users/fiona/Library/Mobile Documents/com~apple~CloudDocs/PHD/Research:Lab/Howe lab/GreekLatinTranslation/Greek_Translation/PH2323 - IG II2 105.txt'
+new_file_path = '/Users/fiona/Library/Mobile Documents/com~apple~CloudDocs/PHD/Research:Lab/Howe lab/GreekLatinTranslation/Greek_Translation/PH2323TEST.txt'
 
 
 
