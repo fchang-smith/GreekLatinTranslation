@@ -21,9 +21,11 @@ def main():
 
         with open(sys.argv[1], "r") as source_file_path:
             with open(sys.argv[2], "w") as new_file_path:
-                for line in sys.argv[1]:
+                for line in source_file_path:
+                    print(line)
                     line = translation(line)
-                    sys.argv[2].write(line)
+                    new_file_path.write(line)
+                    print(line)
 
         print(f"File '{source_file_path}' copied to '{new_file_path}' successfully.")
     except FileNotFoundError:
